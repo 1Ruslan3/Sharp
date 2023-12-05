@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Kardano\Kardano\obj\Debug\net8.0\Kardano.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Kardano\Kardano\obj\Debug\net8.0\Kardano.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Kardano\Kardano\obj\Debug\net8.0\Kardano.AssemblyInfo.cs
+C:\Users\user\source\repos\Kardano\Kardano\obj\Debug\net8.0\Kardano.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Kardano\Kardano\bin\Debug\net8.0\Kardano.exe
+C:\Users\user\source\repos\Kardano\Kardano\bin\Debug\net8.0\Kardano.deps.json
+C:\Users\user\source\repos\Kardano\Kardano\bin\Debug\net8.0\Kardano.runtimeconfig.json
+C:\Users\user\source\repos\Kardano\Kardano\bin\Debug\net8.0\Kardano.dll
+C:\Users\user\source\repos\Kardano\Kardano\bin\Debug\net8.0\Kardano.pdb
+C:\Users\user\source\repos\Kardano\Kardano\obj\Debug\net8.0\Kardano.dll
+C:\Users\user\source\repos\Kardano\Kardano\obj\Debug\net8.0\refint\Kardano.dll
+C:\Users\user\source\repos\Kardano\Kardano\obj\Debug\net8.0\Kardano.pdb
+C:\Users\user\source\repos\Kardano\Kardano\obj\Debug\net8.0\Kardano.genruntimeconfig.cache
+C:\Users\user\source\repos\Kardano\Kardano\obj\Debug\net8.0\ref\Kardano.dll

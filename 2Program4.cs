@@ -1,4 +1,6 @@
-﻿class Program
+﻿using static Program;
+
+class Program
 {
 
     public interface IIntegralSolver
@@ -10,6 +12,8 @@
             get;
         }
     }
+
+
 
     public abstract class IntegralSolverBase :
         IIntegralSolver
@@ -134,6 +138,94 @@
 
     }
 
+    public sealed class IntegralSimpson :
+        IntegralSolverBase
+    {
+        public IntegralSimpson() :
+            base("Simpson")
+        {
+
+        }
+        protected override double SolveLogic(
+            Func<double, double> f,
+            double a,
+            double b,
+            double epsilon)
+        {
+            var previousApproximation = 0d;
+            var currentApproximation = 0d;
+            int n = 1;
+            var h = b - a;
+
+            do
+            {
+                previousApproximation = currentApproximation;
+                n *= 2;
+                h /= 2;
+
+                currentApproximation = f(a) + f(b);
+
+                for (var i = 1; i < n; i++)
+                {
+                    currentApproximation += i % 2 == 0 ? 2 * f(a + i * h) : 4 * f(a + i * h); ;
+                }
+
+                currentApproximation *= h;
+            } while (Math.Abs(currentApproximation - previousApproximation) >= epsilon);
+
+
+            return currentApproximation / 3;
+        }
+
+    }
+
+
+
+    public sealed class IntegralTrapezoidal :
+        IntegralSolverBase
+    {
+        public IntegralTrapezoidal() :
+            base("Trapezoidal")
+        {
+
+        }
+        protected override double SolveLogic(
+            Func<double, double> f,
+            double a,
+            double b,
+            double epsilon)
+        {
+            var previousApproximation = 0d;
+            var currentApproximation = 0d;
+            int n = 1;
+            var h = b - a;
+
+            do
+            {
+                previousApproximation = currentApproximation;
+                n *= 2;
+                h /= 2;
+
+                currentApproximation = 0.5 * f(a) + f(b);
+
+                for (var i = 1; i < n; i++)
+                {
+                    currentApproximation += f(a + i * h);
+                }
+
+                currentApproximation *= h;
+            } while (Math.Abs(currentApproximation - previousApproximation) >= epsilon);
+
+
+            return currentApproximation;
+        }
+
+
+
+
+
+    }
+
     public sealed class CentralRectanglesIntegralSolver :
         IntegralSolverBase
     {
@@ -184,7 +276,9 @@
         {
             new LeftRectanglesIntegralSolver(),
             new RightRectanglesIntegralSolver(),
-            new CentralRectanglesIntegralSolver()
+            new CentralRectanglesIntegralSolver(),
+            new IntegralTrapezoidal(),
+            new IntegralSimpson()
         };
 
         // локальная функция
